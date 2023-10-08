@@ -39,8 +39,8 @@
             <td th:text="${mhs.gender}"></td>
 
             <td>
-            <a href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>
-            <a href="@{/delete/{nim}(nim=${mhs.nim})}" class="btn btn-danger">Delete</a>
+            <a th:href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>
+            <a th:href="@{/delete/{nim}(nim=${mhs.nim})}" class="btn btn-danger">Delete</a>
             </td>
             </tr>
         </tbody>
