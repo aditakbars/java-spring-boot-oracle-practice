@@ -44,12 +44,12 @@ public class Mahasiswa {
         this.angkatan = angkatan;
     }
 
-    public String getNoHP() {
+    public String getNo_hp() {
         return no_hp;
     }
 
-    public void setNoHP(String noHP) {
-        this.no_hp = noHP;
+    public void setNo_hp(String no_hp) {
+        this.no_hp = no_hp;
     }
 
     public String getIg() {
