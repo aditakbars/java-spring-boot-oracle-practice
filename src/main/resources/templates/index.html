@@ -26,6 +26,7 @@
         <table class="table">
         <thead class="thead-dark">
             <tr>
+            <th scope="col">NIM</th>
             <th scope="col">Nama</th>
             <th scope="col">Angkatan</th>
             <th scope="col">Gender</th>
@@ -34,14 +35,15 @@
         </thead>
         <tbody>
             <tr th:each="mhs : ${mahasiswa}">
-            <td th:text="${mhs.nama}"></td>
-            <td th:text="${mhs.angkatan}"></td>
-            <td th:text="${mhs.gender}"></td>
+                <td th:text="${mhs.nim}"></td>    
+                <td th:text="${mhs.nama}"></td>
+                <td th:text="${mhs.angkatan}"></td>
+                <td th:text="${mhs.gender}"></td>
 
-            <td>
-            <a th:href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>
-            <a th:href="@{/delete/{nim}(nim=${mhs.nim})}" class="btn btn-danger">Delete</a>
-            </td>
+                <td>
+                    <a th:href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>
+                    <a th:href="@{/delete/{nim}(nim=${mhs.nim})}" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         </tbody>
         </table>
