@@ -8,6 +8,8 @@ public class Mahasiswa {
     private String nama;
     private String angkatan;
     private String gender;
+    private String no_hp;
+    private String ig;
     
     // ! Setter dan Getter Properties
     public String getNama() {
@@ -40,5 +42,21 @@ public class Mahasiswa {
 
     public void setAngkatan(String angkatan) {
         this.angkatan = angkatan;
+    }
+
+    public String getNoHP() {
+        return no_hp;
+    }
+
+    public void setNoHP(String noHP) {
+        this.no_hp = noHP;
+    }
+
+    public String getIg() {
+        return ig;
+    }
+
+    public void setIg(String ig) {
+        this.ig = ig;
     }
 }

@@ -30,6 +30,8 @@
             <th scope="col">Nama</th>
             <th scope="col">Angkatan</th>
             <th scope="col">Gender</th>
+            <th scope="col">No HP</th>
+            <th scope="col">Instagram</th>
             <th scope="col">Action</th>
             </tr>
         </thead>
@@ -39,6 +41,8 @@
                 <td th:text="${mhs.nama}"></td>
                 <td th:text="${mhs.angkatan}"></td>
                 <td th:text="${mhs.gender}"></td>
+                <td th:text="${mhs.no_hp}"></td>
+                <td th:text="${mhs.ig}"></td>
 
                 <td>
                     <a th:href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>

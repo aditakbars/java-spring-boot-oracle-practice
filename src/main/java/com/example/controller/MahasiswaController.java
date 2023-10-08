@@ -19,8 +19,7 @@ public class MahasiswaController {
     @GetMapping("/")
     public String index(Model model) {
         String sql = "SELECT * FROM mahasiswa";
-        List<Mahasiswa> mahasiswa = jdbcTemplate.query(sql,
-                BeanPropertyRowMapper.newInstance(Mahasiswa.class));
+        List<Mahasiswa> mahasiswa = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Mahasiswa.class));
         model.addAttribute("mahasiswa", mahasiswa);
         return "index";
     }
@@ -31,24 +30,22 @@ public class MahasiswaController {
 
     @PostMapping("/add")
     public String add(Mahasiswa mahasiswa) {
-        String sql = "INSERT INTO mahasiswa VALUES(?,?,?,?)";
-        jdbcTemplate.update(sql, mahasiswa.getNim(),
-                mahasiswa.getNama(), mahasiswa.getAngkatan(), mahasiswa.getGender());
+        String sql = "INSERT INTO mahasiswa VALUES(?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, mahasiswa.getNim(),mahasiswa.getNama(), mahasiswa.getAngkatan(), mahasiswa.getGender(), mahasiswa.getNoHP(), mahasiswa.getIg());
         return "redirect:/";
     }
 
     @GetMapping("/edit/{nim}")
     public String edit(@PathVariable("nim") String nim, Model model) {
         String sql = "SELECT * FROM mahasiswa WHERE nim = ?";
-        Mahasiswa mahasiswa = jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Mahasiswa.class), nim);
-        model.addAttribute("mahasiswa", mahasiswa);
+        Mahasiswa mahasiswa = jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Mahasiswa.class), nim);model.addAttribute("mahasiswa", mahasiswa);
         return "edit";
     }
 
     @PostMapping("/edit")
     public String edit(Mahasiswa mahasiswa) {
-        String sql = "UPDATE mahasiswa SET nama = ?, angkatan = ?, gender = ? WHERE nim = ?";
-        jdbcTemplate.update(sql, mahasiswa.getNama(), mahasiswa.getAngkatan(), mahasiswa.getGender(), mahasiswa.getNim());
+        String sql = "UPDATE mahasiswa SET nama = ?, angkatan = ?, gender = ?, no_hp = ?, ig = ? WHERE nim = ?";
+        jdbcTemplate.update(sql, mahasiswa.getNama(), mahasiswa.getAngkatan(), mahasiswa.getGender(), mahasiswa.getNim(), mahasiswa.getNoHP(), mahasiswa.getIg());
         return "redirect:/";
     }
 
