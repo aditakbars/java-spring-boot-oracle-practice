@@ -8,7 +8,7 @@ public class Mahasiswa {
     private String nama;
     private String angkatan;
     private String gender;
-    private String no_hp;
+    private String telepon;
     private String ig;
     
     // ! Setter dan Getter Properties
@@ -44,12 +44,12 @@ public class Mahasiswa {
         this.angkatan = angkatan;
     }
 
-    public String getNo_hp() {
-        return no_hp;
+    public String getTelepon() {
+        return telepon;
     }
 
-    public void setNo_hp(String no_hp) {
-        this.no_hp = no_hp;
+    public void setTelepon(String telepon) {
+        this.telepon = telepon;
     }
 
     public String getIg() {
