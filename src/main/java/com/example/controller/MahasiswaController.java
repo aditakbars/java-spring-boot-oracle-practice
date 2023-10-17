@@ -30,8 +30,8 @@ public class MahasiswaController {
 
     @PostMapping("/add")
     public String add(Mahasiswa mahasiswa) {
-        String sql = "INSERT INTO mahasiswa VALUES(?,?,?,?,?,?)";
-        jdbcTemplate.update(sql, mahasiswa.getNim(),mahasiswa.getNama(), mahasiswa.getAngkatan(), mahasiswa.getGender(), mahasiswa.getTelepon(), mahasiswa.getIg());
+        String sql = "INSERT INTO mahasiswa VALUES(?,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, mahasiswa.getNim(),mahasiswa.getNama(), mahasiswa.getAngkatan(), mahasiswa.getGender(), mahasiswa.getTelepon(), mahasiswa.getDaerah(), mahasiswa.getIg());
         return "redirect:/";
     }
 
@@ -44,8 +44,8 @@ public class MahasiswaController {
 
     @PostMapping("/edit")
     public String edit(Mahasiswa mahasiswa) {
-        String sql = "UPDATE mahasiswa SET nama = ?, angkatan = ?, gender = ?, telepon = ?, ig = ? WHERE nim = ?";
-        jdbcTemplate.update(sql, mahasiswa.getNama(), mahasiswa.getAngkatan(), mahasiswa.getGender(), mahasiswa.getTelepon(), mahasiswa.getIg(), mahasiswa.getNim());
+        String sql = "UPDATE mahasiswa SET nama = ?, angkatan = ?, gender = ?, telepon = ?, daerah = ?, ig = ? WHERE nim = ?";
+        jdbcTemplate.update(sql, mahasiswa.getNama(), mahasiswa.getAngkatan(), mahasiswa.getGender(), mahasiswa.getTelepon(), mahasiswa.getDaerah(), mahasiswa.getIg(), mahasiswa.getNim());
         return "redirect:/";
     }
 

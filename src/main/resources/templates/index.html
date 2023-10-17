@@ -20,7 +20,7 @@
     <!-- <body> -->
     <h1 class="text-center">Daftar Mahasiswa</h1>
 
-    <a href="/add" class="btn btn-success w-full mt- 4">Tambah Mahasiswa</a>
+    <a href="/add" class="btn btn-success w-full mt-4">Tambah Mahasiswa</a>
 
     <div class="mt-2">
         <table class="table">
@@ -31,6 +31,7 @@
             <th scope="col">Angkatan</th>
             <th scope="col">Gender</th>
             <th scope="col">No HP</th>
+            <th scope="col">Asal Daerah</th>
             <th scope="col">Instagram</th>
             <th scope="col">Action</th>
             </tr>
@@ -42,12 +43,13 @@
                 <td th:text="${mhs.angkatan}"></td>
                 <td th:text="${mhs.gender}"></td>
                 <td th:text="${mhs.telepon}"></td>
+                <td th:text="${mhs.daerah}"></td>
                 <td th:text="${mhs.ig}"></td>
 
-                <td>
+                <td class="text-center">
                     <a th:href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>
-                    <a th:href="@{/delete/{nim}(nim=${mhs.nim})}" class="btn btn-danger">Delete</a>
-                    <a th:href="@{/detail/{nim}(nim=${mhs.nim})}" class="btn btn-success">Detail</a>
+                    <a th:href="@{/delete/{nim}(nim=${mhs.nim})}" class="btn btn-danger">Delete</a><br>
+                    <a th:href="@{/detail/{nim}(nim=${mhs.nim})}" class="btn btn-success w-full mt-1">Lihat Detail</a>
                 </td>
             </tr>
         </tbody>

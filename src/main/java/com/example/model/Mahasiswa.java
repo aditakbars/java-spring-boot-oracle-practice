@@ -10,6 +10,7 @@ public class Mahasiswa {
     private String gender;
     private String telepon;
     private String ig;
+    private String daerah;
     
     // ! Setter dan Getter Properties
     public String getNama() {
@@ -58,5 +59,13 @@ public class Mahasiswa {
 
     public void setIg(String ig) {
         this.ig = ig;
+    }
+
+    public String getDaerah() {
+        return daerah;
+    }
+
+    public void setDaerah(String daerah) {
+        this.daerah = daerah;
     }
 }

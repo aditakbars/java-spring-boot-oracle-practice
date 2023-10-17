@@ -57,11 +57,21 @@ thymeleaf template engine -->
             <div class="form-group">
                 <label for="telepon">No. HP</label>
                 <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     id="telepon"
                     name="telepon"
                     th:value="${mahasiswa.telepon}"
+                />
+            </div>
+            <div class="form-group">
+                <label for="daerah">Asal Daerah</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="daerah"
+                    name="daerah"
+                    th:value="${mahasiswa.daerah}"
                 />
             </div>
             <div class="form-group">
