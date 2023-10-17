@@ -20,50 +20,21 @@
     <!-- <body> -->
     <h1 class="text-center">Detail Mahasiswa</h1>
 
-    <div class="mt-2">
-        <table class="table">
-        <thead class="thead-dark">
-            <tr>
-            <th scope="col">NIM</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Angkatan</th>
-            <th scope="col">Gender</th>
-            <th scope="col">No HP</th>
-            <th scope="col">Instagram</th>
-            <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="mhs : ${mahasiswa}">
-                <td th:text="${mhs.nim}"></td>    
-                <td th:text="${mhs.nama}"></td>
-                <td th:text="${mhs.angkatan}"></td>
-                <td th:text="${mhs.gender}"></td>
-                <td th:text="${mhs.telepon}"></td>
-                <td th:text="${mhs.ig}"></td>
-
-                <td>
-                    <a th:href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>
-                    <a th:href="@{/delete/{nim}(nim=${mhs.nim})}" class="btn btn-danger">Delete</a>
-                    <a th:href="@{/detail/{nim}(nim=${mhs.nim})}" class="btn btn-success">Lihat Detail</a>
-                </td>
-            </tr>
-        </tbody>
-        </table>
-
-        <div class="card text-center" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="mt-2 text-center">
+        <div class="card mx-auto" style="width: 27rem;">
+            <img class="avatar img-circle img-thumbnail mx-auto mt-2" src="https://source.unsplash.com/360x360?student" alt="Card image cap" width="180" height="180">
             <div class="card-body">
                 <h5 class="card-title" th:text="${mahasiswa.nama}"></h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item" th:text="NIM nya ${mahasiswa.nim}"></li>
-                <li class="list-group-item" th:text="Dari Angkatan ${mahasiswa.angkatan}"></li>
-                <li class="list-group-item"></li>
+                <li class="list-group-item" th:text="'NIM nya ' + ${mahasiswa.nim}"></li>
+                <li class="list-group-item" th:text="'Dari Angkatan ' + ${mahasiswa.angkatan}"></li>
+                <li class="list-group-item" th:text="'Gender nya ' + ${mahasiswa.gender}"></li>
+                <li class="list-group-item" th:text="'Kalau mau nelpon bisa ke ' + ${mahasiswa.telepon}"></li>
+                <li class="list-group-item" th:text="'Asalnya dari ' + ${mahasiswa.daerah}"></li>
+                <li class="list-group-item" th:text="'Ini kalo mau mutualan IG nya ' + ${mahasiswa.ig}"></li>
             </ul>
         </div>
-
 
         <a href="/" class="btn btn-outline-info mt-3">Kembali</a>
     </div>
