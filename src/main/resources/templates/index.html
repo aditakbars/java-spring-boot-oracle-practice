@@ -23,9 +23,9 @@
     <a href="/add" class="btn btn-success w-full mt-4">Tambah Mahasiswa</a>
 
     <div class="mt-2">
-        <table class="table">
+        <table class="table align-middle text-center">
         <thead class="thead-dark">
-            <tr>
+            <tr class="text-center">
             <th scope="col">NIM</th>
             <th scope="col">Nama</th>
             <th scope="col">Angkatan</th>
@@ -37,14 +37,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="mhs : ${mahasiswa}">
-                <td th:text="${mhs.nim}"></td>    
-                <td th:text="${mhs.nama}"></td>
-                <td th:text="${mhs.angkatan}"></td>
-                <td th:text="${mhs.gender}"></td>
-                <td th:text="${mhs.telepon}"></td>
-                <td th:text="${mhs.daerah}"></td>
-                <td th:text="${mhs.ig}"></td>
+            <tr class="align-middle" th:each="mhs : ${mahasiswa}">
+                <td class="align-middle" th:text="${mhs.nim}"></td>    
+                <td class="align-middle" th:text="${mhs.nama}"></td>
+                <td class="align-middle" th:text="${mhs.angkatan}"></td>
+                <td class="align-middle" th:text="${mhs.gender}"></td>
+                <td class="align-middle" th:text="${mhs.telepon}"></td>
+                <td class="align-middle" th:text="${mhs.daerah}"></td>
+                <td class="align-middle" th:text="${mhs.ig}"></td>
 
                 <td class="text-center">
                     <a th:href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>
