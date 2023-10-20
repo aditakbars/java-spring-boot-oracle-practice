@@ -18,11 +18,20 @@ public class MahasiswaController {
     private JdbcTemplate jdbcTemplate;
     @GetMapping("/")
     public String index(Model model) {
-        String sql = "SELECT * FROM mahasiswa";
+        String sql = "SELECT * FROM mahasiswa WHERE deleted = 0";
         List<Mahasiswa> mahasiswa = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Mahasiswa.class));
         model.addAttribute("mahasiswa", mahasiswa);
         return "index";
     }
+
+    @GetMapping("/trash")
+    public String trash(Model model) {
+        String sql = "SELECT * FROM mahasiswa WHERE deleted = 1";
+        List<Mahasiswa> mahasiswa = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Mahasiswa.class));
+        model.addAttribute("mahasiswa", mahasiswa);
+        return "trash";
+    }
+
     @GetMapping("/add")
     public String add(Model model) {
         return "add";
@@ -49,12 +58,21 @@ public class MahasiswaController {
         return "redirect:/";
     }
 
+    @GetMapping("/restore/{nim}")
+    public String restore(Mahasiswa mahasiswa) {
+        String sql = "UPDATE mahasiswa SET deleted = 0 WHERE nim = ?";
+        jdbcTemplate.update(sql, mahasiswa.getNim());
+        return "redirect:/";
+    }
+    
+
     @GetMapping("/delete/{nim}")
     public String delete(@PathVariable("nim") String nim) {
-        String sql = "DELETE FROM mahasiswa WHERE nim = ?";
+        String sql = "UPDATE mahasiswa SET deleted = 1 WHERE nim =?";
         jdbcTemplate.update(sql, nim);
         return "redirect:/";
     }
+    
 
     @GetMapping("/detail/{nim}")
     public String detail(@PathVariable("nim") String nim, Model model) {

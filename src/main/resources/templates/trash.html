@@ -18,10 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- Bootstrap -->
     <!-- <body> -->
-    <h1 class="text-center">Daftar Mahasiswa</h1>
-
-    <a href="/add" class="btn btn-success w-full mt-4">Tambah Mahasiswa</a>
-    <a href="/trash" class="btn btn-success w-full mt-4">Tong Sampah</a>
+    <h1 class="text-center">Sampah</h1>
 
     <div class="mt-2">
         <table class="table align-middle text-center">
@@ -48,7 +45,7 @@
                 <td class="align-middle" th:text="${mhs.ig}"></td>
 
                 <td class="text-center">
-                    <a th:href="@{/edit/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Edit</a>
+                    <a th:href="@{/restore/{nim}(nim=${mhs.nim})}" class="btn btn-primary">Restore</a>
                     <a th:href="@{/delete/{nim}(nim=${mhs.nim})}" class="btn btn-danger">Delete</a><br>
                     <a th:href="@{/detail/{nim}(nim=${mhs.nim})}" class="btn btn-success w-full mt-1">Lihat Detail</a>
                 </td>
